@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <title>test: requireCSS</title>
+  <!-- <script src="loadCSS.js"></script>
+  <script src="onloadCSS.js"></script>
+  <script src="requireCSS.js"></script>
+  <script src="removeCSS.js"></script>
+  <script src="switchCSS.js"></script> -->
+  <script src="../dist/require.css.min.js"></script>
+  <style>
+    body {
+      font-family: monospace;
+      font-size: 1.2em;
+      margin: 5%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Should Red color</h1>
+  <p id="p">I am paragraph, Should Blue color</p>
+  <fieldset>
+    <legend>Test</legend>
+    <p>
+      <button id="btn_require">require + callback</button>
+      <button id="btn_switch">switch + callback</button>
+    </p>
+    <p>
+      <button id="btn_require_again">require again + callback</button>
+      <button id="btn_remove">remove + callback</button>
+    </p>
+    <pre id="log"></pre>
+    <script>
+      btn_require.addEventListener('click', ()=> {
+        requireCSS(['demo/h1.css', 'demo/p.css'], ()=> {
+          log.textContent = 'loaded'
+        })
+      })
+      btn_switch.addEventListener('click', ()=> {
+        switchCSS('demo/p.css', 'demo/p2.css', ()=> {
+          p.textContent = p.textContent.replace('Blue', 'Green')
+          log.textContent = 'switched'
+        })
+      })
+      btn_require_again.addEventListener('click', ()=> {
+        requireCSS(['demo/p.css'], ()=> {
+          p.textContent = p.textContent.replace('Green', 'Blue')
+          log.textContent = 'p loaded'
+        })
+      })
+      btn_remove.addEventListener('click', ()=> {
+        removeCSS('demo/p2.css', ()=> {
+          log.textContent = 'removed'
+        })
+      })
+    </script>
+  </fieldset>
+</body>
+</html>
