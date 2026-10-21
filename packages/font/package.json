@@ -1,0 +1,8 @@
+{
+  "name": "font",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build:css": "node scripts/build.js > dist/fontStack.css"
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>fontStack</title>
+  <link href="./style.css" rel="stylesheet" >
+  <link href="../dist/fontStack.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/f/loremjs@master/lorem.js" async></script>
+</head>
+
+<body>
+  <main>
+  <div id="layout">
+    <div>
+      <fieldset>
+        <legend>Font Family</legend>
+        <select id="select_font">
+          <option selected disabled>-- select font --</option>
+        </select>
+        <pre><b><output>Font stack</output></b></pre>
+      </fieldset>
+    </div>
+    <div id="root">
+      <div>
+        <h1 data-lorem="2w"></h1>
+        <div data-lorem="1p"></div>
+      </div>
+      <div>
+        <h2 data-lorem="2w"></h2>
+        <ul>
+          <li data-lorem="1s"></li>
+          <li data-lorem="1s"></li>
+          <li data-lorem="1s"></li>
+          <li data-lorem="1s"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </main>
+  <script src="./main.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+@import url('./simple.css');
+html {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  padding: 8px;
+  display: block;
+}
+#select_font {
+  width: 100%;
+  padding: 4px;
+  font: normal 16px/1.25 monospace;
+}
+
+#layout {
+  display: flex;
+  flex-wrap: nowrap;
+  & > :first-child {
+    min-width: 300px;
+    @media screen and (max-width: 780px) {
+      width: 100%;
+    }
+  }
+  & > :last-child {
+    flex: 1;
+    padding: 1em;
+    @media screen and (max-width: 780px) {
+      flex: 0;
+    }
+  }
+  @media screen and (max-width: 780px) {
+    flex-direction: column;
+  }
+}
